@@ -1,0 +1,65 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+<input type="hidden" name="id" [value]="service.formData.id">
+<div class="mb-3">
+<label>Nome do Aluno</label>
+<input class="form-control form-control-lg" placeholder="Nome do Aluno" #nome="ngModel" name="nome" [(ngModel)]="service.formData.nome"
+required minlength="4">
+<div *ngIf="nome.invalid && (nome.dirty || nome.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="nome.errors?.['required']">
+    O Campo Nome é obrigatório.
+  </div>
+  <div *ngIf="nome.errors?.['minlength']">
+    Nome deve conter pelo menos 4 caracteres.
+  </div>
+</div>
+</div>
+
+<div class="mb-3">
+<label>Sobrenome do Aluno</label>
+<input class="form-control form-control-lg" placeholder="Sobrenome do Aluno" #sobrenome="ngModel" name="sobrenome" [(ngModel)]="service.formData.sobrenome"
+required minlength="4">
+
+<div *ngIf="sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="sobrenome.errors?.['required']">
+    O Campo Sobrenome é obrigatório.
+  </div>
+  <div *ngIf="sobrenome.errors?.['minlength']">
+    Sobrenome deve conter pelo menos 4 caracteres.
+  </div>
+</div>
+</div>
+
+<div class="mb-3">
+<label>Idade do Aluno</label>
+<input class="form-control form-control-lg" type="number" placeholder="Idade do Aluno" name="idade" [(ngModel)]="service.formData.idade"
+required>
+
+</div>
+
+
+
+<div class="mb-3">
+<label>Curso do Aluno</label>
+<input class="form-control form-control-lg" placeholder="Curso do Aluno" #curso="ngModel" name="curso" [(ngModel)]="service.formData.curso"
+required minlength="4">
+
+<div *ngIf="curso.invalid && (curso.dirty || curso.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="sobrenome.errors?.['required']">
+    O Campo Curso é obrigatório.
+  </div>
+  <div *ngIf="sobrenome.errors?.['minlength']">
+    Curso deve conter pelo menos 4 caracteres.
+  </div>
+</div>
+</div>
+
+<div class="d-grid">
+<button class="btn btn-lg btn-success" type="submit">Salvar</button>
+</div>
+</form>

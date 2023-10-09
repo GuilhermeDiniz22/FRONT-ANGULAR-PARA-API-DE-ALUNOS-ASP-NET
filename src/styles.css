@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+.mouse-hover {
+  cursor: pointer;
+}
+
+form label{
+text-transform: capitalize;
+color: black;
+}
+
+form input{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+form input::placeholder{
+color: brown;
+font-weight: 400;
+}
